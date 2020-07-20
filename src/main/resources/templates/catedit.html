@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cat</title>
+</head>
+<body>
+<form action="/cat" method="post">
+    <input name="id" type="hidden" th:value="${cat.id}"><br>
+    <input name="name" th:value="${cat.name}"><br>
+    <input name="age" th:value="${cat.age}"><br>
+    <input name="color" th:value="${cat.color}"><br>
+    <input type="submit"><br>
+</form>
+
+</body>
+</html>
