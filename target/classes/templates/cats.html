@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User</title>
+</head>
+<body>
+<form action="/user" method="post">
+    <input name="name"><br>
+    <input name="age"><br>
+    <input type="submit"><br>
+</form>
+<table>
+    <tr>
+        <td>Имя</td>
+        <td>Возраст</td>
+        <td>Редактировать</td>
+        <td>Удалить</td>
+    </tr>
+    <tr th:each="user: ${user}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td><a th:href="${'/user/edit?id=' + user.id}">Редактирвать</a></td>
+        <td><a th:href="${'/user/removeByName?name=' + user.name}"> Удалить</a></td>
+    </tr>
+</table>
+</body>
+</html>
